@@ -22,6 +22,4 @@ Este repositório contém o prototipo inicial da comunidade SPACE, vale realçar
 
 > Não esqueça de deixar uma estrela no repositório
 
-<a href="#" style="color:blue; font-weight:700 ;">Baixe o backend do projeto<a/>
-
-# public-space-frontend
+<a href="https://github.com/MiguelLuamba/public-space-backend" style="color:blue; font-weight:700 ;">Baixe o backend do projeto<a/>
