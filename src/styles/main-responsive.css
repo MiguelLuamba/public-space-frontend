@@ -1,0 +1,24 @@
+main > section.exp{
+  display: none;
+}
+main div.mobile-menu{
+  display: none;
+}
+
+@media(max-width: 428px){
+  main > section#explore:nth-child(3){
+    display: none;
+  }
+  main > section.exp{
+    display: flex;
+  }
+
+  main > div#controller{
+    display: none;
+  }
+
+  main > div.mobile-menu{
+    display: block;
+  }
+
+}

@@ -1,0 +1,30 @@
+input[type="radio"]{
+  display: none;
+}
+
+div.rcbx{
+  position: absolute;
+  transition: width 300ms ease-in-out, height 300ms ease-in-out;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 0.5;
+}
+
+label{
+  cursor: pointer;
+}
+
+input[type="radio"]#awfull:checked + label.awfull div.rcbx,
+input[type="radio"]#bad:checked + label.bad div.rcbx,
+input[type="radio"]#good:checked + label.good div.rcbx,
+input[type="radio"]#nice:checked + label.nice div.rcbx,
+input[type="radio"]#excelent:checked + label.excelent div.rcbx{
+  width: 110%;
+  height: 110%;
+}

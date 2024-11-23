@@ -1,0 +1,57 @@
+@media(max-width: 895px){
+  section#home > div{
+    flex-direction: column;
+  }
+  section#home > div > aside{
+    width: 100%;
+  }
+  section#home > div > figure{
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+
+@media(max-width: 500px){
+  section#home header > nav{
+    display: none;
+  }
+  section#home > header > .mobile-menu{
+    display: block;
+  }
+}
+
+@media(max-width: 428px){
+
+  section#home #logo{
+    font-size: 30px;
+  }
+
+  section#home > div > aside p:nth-child(1){
+    font-size: 14px;
+  }
+  section#home > div > aside article{
+    font-size: 20px;
+  }
+  section#home > div > aside article p{
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+  section#home > div > aside p:nth-child(4){
+    font-size: 36px;
+  }
+
+  section#home > div > aside p:last-child br{
+    display: none;
+  }
+  section#home > div > aside p:last-child{
+    font-size: 20px;
+  }
+
+}
+
+@media(max-width: 320px){
+  section#home > div > figure{
+    display: none;
+  }
+}

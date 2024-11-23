@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+h1.joinUsText{
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-family:sans-serif,'Inter', 'Poppins', Arial;
+  -webkit-text-stroke-width: 2px;
+  font-size: 100px;
+  position: relative;
+  -webkit-text-fill-color: transparent;
+}
+
+input, textarea{
+  outline: none;
+}

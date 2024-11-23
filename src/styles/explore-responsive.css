@@ -1,0 +1,47 @@
+@media(max-width: 1020px){
+  section#explore > div#rd-sec > section > div {
+    gap: 30px;
+  }
+}
+@media(max-width: 916px){
+  section#explore > div#rd-sec > section > div {
+    gap: 10px;
+  }
+
+  section#explore > div#rd-sec > section > div > article > p:nth-child(1){
+    font-size: 30px;
+  }
+
+  section#explore > div#rd-sec > section > div > article > p:nth-child(2){
+    font-size: 20px;
+  }
+}
+
+
+@media(max-width: 895px){
+  section#explore figure{
+    display: none;
+  }
+  section#explore #model-box{
+    display: grid;
+  }
+
+  section#explore > div:nth-child(2){
+    justify-content: center;
+  }
+}
+
+
+
+@media(max-width: 500px){
+  
+}
+
+@media(max-width: 428px){
+
+
+}
+
+@media(max-width: 320px){
+  
+}

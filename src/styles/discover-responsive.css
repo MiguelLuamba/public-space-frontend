@@ -1,0 +1,35 @@
+section#discover > div#mobile{
+  display: none;
+}
+@media(max-width: 895px){
+  
+}
+
+@media(max-width: 500px){
+ 
+}
+
+@media(max-width: 428px){
+  section#discover > article{
+    display: none;
+  }
+  section#discover{
+    padding: 0px;
+    background-image: url("/bg/discover-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  section#discover > div#mobile{
+    display: grid;
+    /* flex-direction: column; */
+  }
+  /* section#discover article{
+    flex-direction: column;
+  } */
+
+}
+
+@media(max-width: 320px){
+
+}

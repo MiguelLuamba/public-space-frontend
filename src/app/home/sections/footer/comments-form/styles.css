@@ -1,0 +1,32 @@
+select{
+  appearance: none; /* Remove o estilo padrão */
+  -webkit-appearance: none; /* Para Safari */
+  -moz-appearance: none; /* Para Firefox */
+}
+
+div.selectContainer{
+  width: 100%;
+  height: 64px;
+  border-radius: 8px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  position: relative;
+  padding: 0 24px;
+}
+
+div.selectContainer div.select{
+  width: 80%;
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 16px 18px;
+  position: absolute;
+  background-color: #fff;
+  top: calc(100% + 10px);
+  right: 0;
+}
+
+input.seachInput{
+  width: calc(100% - 24px);
+}

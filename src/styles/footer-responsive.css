@@ -1,0 +1,97 @@
+@media(max-width: 895px){
+  div#newslatter{
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+  div#newslatter > article,
+  div#newslatter > form{
+    width: 100%;
+  }
+
+  form#comment{
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 12px;
+  }
+  form#comment > div:nth-child(1){
+    width: 100%;
+  }
+}
+
+@media(max-width: 580px){
+  footer#footer{
+    padding: 32px 12px;
+  }
+  #reactions label > div{
+    width: 60px;
+    height: 60px;
+  }
+
+  footer h1#logo{
+    display: none;
+  }
+
+  footer #copy-box{
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  footer #copyright{
+    font-size: 18px;
+  }
+
+  footer #reaction-txt > p:nth-child(2){
+    font-size: 18px;
+    width: 80%;
+  }
+}
+
+@media(max-width: 428px){
+  #reactions {
+    gap: 16px;
+  }
+  #reactions label > div{
+    width: 40px;
+    height: 40px;
+  }
+  #reactions label > p{
+    font-size: 16px;
+  }
+
+  
+
+  footer div.selectContainer div.select{
+    width: 100%;
+  }
+
+  footer #copy-box > p{
+    font-size: 14px;
+    text-align: center;
+  }
+  footer #newslatter > form > input,
+  footer #newslatter > form > button{
+    width: 100%;
+  }
+  footer #newslatter > form{
+    width: 100%;
+    flex-direction: column;
+  }
+
+}
+
+@media(max-width: 320px){
+  #reactions label > div{
+    width: 40px;
+    height: 40px;
+  }
+
+  footer #footer-list{
+    gap: 6px;
+  }
+  
+  footer #footer-list > h3,
+  footer #footer-list > span{
+    font-size: 16px;
+  }
+}

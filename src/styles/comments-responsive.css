@@ -1,0 +1,53 @@
+@media(max-width: 895px){
+  section#comments > article > p{
+    width: 35%;
+  }
+}
+
+@media(max-width: 695px){
+  section#comments > article > span{
+    width: 30%;
+  }
+}
+
+@media(max-width:518px){
+  section#comments > article > p{
+    width: 27%;
+  }
+  section#comments > article > span{
+    width: 25%;
+  }
+}
+@media(max-width: 428px){
+  section#comments{
+    width: 100vw;
+  }
+  section#comments > article > p:nth-child(1) {
+
+    font-size: 24px;
+    width: 22%;
+  }
+
+  section#comments > article > span{
+    width: 22%;
+  }
+
+}
+
+@media(max-width: 390px){
+  section#comments > article > span{
+    width: 20%;
+  }
+}
+@media(max-width: 320px){
+  section#comments > article > p:nth-child(1) {
+    font-size: 20px;
+    width: 20%;
+
+  }
+
+  section#comments > article > span{
+    width: 17%;
+    text-align: justify;
+  }
+}
