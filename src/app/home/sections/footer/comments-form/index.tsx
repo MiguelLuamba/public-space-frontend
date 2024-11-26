@@ -2,7 +2,6 @@
 
 import "./styles.css";
 import axios from "axios";
-import Image from "next/image";
 import { api } from "@/services/api";
 import { Search } from "lucide-react";
 import { Reactions } from "../reactions";
@@ -14,6 +13,7 @@ import { SelectedCoutryType } from "@/interfaces/selected-coutry-interface";
 import { FetchLoadingStateProps } from "@/interfaces/fetchLoading-interface";
 import { FormEvent, useEffect, useRef, useState, useTransition } from "react";
 import { Countries, FilteredCountries } from "@/interfaces/countries-interface";
+import Image from "next/image";
 
 export function CommentsForm(){
   const [searchCountry, setSearchCountry] = useState("")
@@ -35,13 +35,14 @@ export function CommentsForm(){
     try {
       const response = (await axios.get(httpPath)).data
 
-      const filteredCountries = response[1].map((country: Countries)=>{
-        return {name: country.name, flag: country.iso2Code.toLowerCase()}
-      })
 
-      setAllCountries(filteredCountries)
-      
-      
+      const filteredCountries = response[1]
+      .filter((country: Countries) => /^[A-Z]{2}$/.test(country.iso2Code)) // Filtra apenas códigos ISO válidos
+      .map((country: Countries) => ({
+        name: country.name,
+        flag: country.iso2Code.toLowerCase(), // Converte o código ISO para minúsculas
+      }));
+      setAllCountries(filteredCountries)      
     } catch (error) {
       console.log(error)
       return console.log("Erro no servidor")
@@ -66,7 +67,6 @@ export function CommentsForm(){
       setCountrySelected({image:image, country:child})
 
     setOpenSelectCountrySelect(false)
-
 
   }
 
@@ -212,20 +212,20 @@ export function CommentsForm(){
           />
 
 
-          <div className="selectContainer bg-dark-900 text-gray-600" ref={selectContainerRef}>
+          <div className="selectContainer bg-dark-900 text-gray-600 cursor-pointer" ref={selectContainerRef}>
 
-            {countrySelected?.country 
+            {countrySelected?.image 
               ?(
-                <div className="relative flex items-center justify-start gap-2">
+                <div className="flex items-center justify-start gap-2 cursor-pointer">
 
                   <Image 
-                    src={countrySelected.image}
+                    src={`${countrySelected.image}`} 
                     alt={countrySelected.country} 
                     className="size-6" 
                     width={600} 
                     height={600}
                   />
-                  <p className="text-light">{countrySelected.country}</p>
+                  <p className="text-light cursor-pointer">{countrySelected.country}</p>
                 </div>
               )
               :(<p className="text-gray-600">Selecione um país</p>)
@@ -263,7 +263,6 @@ export function CommentsForm(){
                                   onClick={changeSelectedCountry}
                                   className="w-full h-14 px-4 rounded-lg flex items-center gap-2 hover:bg-blue-900/15 transition-all z-50"
                                 >
-                                
                                 <Image 
                                   src={`https://flagcdn.com/w320/${country.flag}.png`}
                                   alt={country.name}
