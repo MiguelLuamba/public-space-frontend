@@ -1,11 +1,16 @@
+// export interface Countries{
+//   name: {
+//     common: string
+//   }
+//   flags:{ 
+//     png: string
+//     svg: string
+//   }
+// }
+
 export interface Countries{
-  name: {
-    common: string
-  }
-  flags:{ 
-    png: string
-    svg: string
-  }
+  name: string
+  iso2Code: string
 }
 
 export interface FilteredCountries{

@@ -68,10 +68,11 @@ export function CommentSection() {
         </span>
 
         <figure className="flex items-center justify-center cursor-pointer gap-4" onClick={modifyAdminModalInfoState}>
-          <div className="size-16 rounded-full overflow-hidden">
+          <div className="relative size-16 rounded-full overflow-hidden">
             <Image
               src="/img/mike.jpg" 
-              width={400} height={400}
+              // width={400} height={400}
+              fill
               alt="space's owner" 
               className="size-full object-cover"
             />
@@ -107,10 +108,11 @@ export function CommentSection() {
       {showAdminModalInfo && (
         <div className="absolute top-0 left-0 size-full bg-[#0f172ac7] backdrop-blur-sm bg-opacity-5 flex justify-center" onClick={modifyAdminModalInfoState}>
           <div className="p-5 h-max mt-10 bg-blue-600 rounded-3xl w-80 space-y-5 animate-admin_card opacity-0">
-            <figure className="w-full h-64 object-cover overflow-hidden rounded-xl">
+            <figure className="relative w-full h-64 object-cover overflow-hidden rounded-xl">
               <Image 
                 src="/img/mike.jpg" 
-                width={500} height={500}
+                // width={500} height={500}
+                fill
                 alt="space's owner" 
                 className="size-full object-cover"
               />

@@ -16,11 +16,10 @@ export function CommentCard({
   return(
     <div className="h-max grid break-inside-avoid bg-blue-600 rounded-xl p-4 mb-4 shadow-comment_card font-inter space-y-3">
       <article className="w-full flex space-x-3 items-center">
-        <div className="size-10 rounded-full overflow-hidden bg-slate-600">
-
+        <div className="relative size-10 rounded-full overflow-hidden bg-slate-600">
           <Image
             src={flag?flag:""} 
-            width={500} height={500}
+            fill
             alt="bandeira" 
             className="object-cover size-full"
           />

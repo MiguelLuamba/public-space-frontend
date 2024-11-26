@@ -2,6 +2,7 @@
 
 import "./styles.css";
 import axios from "axios";
+import Image from "next/image";
 import { api } from "@/services/api";
 import { Search } from "lucide-react";
 import { Reactions } from "../reactions";
@@ -13,7 +14,6 @@ import { SelectedCoutryType } from "@/interfaces/selected-coutry-interface";
 import { FetchLoadingStateProps } from "@/interfaces/fetchLoading-interface";
 import { FormEvent, useEffect, useRef, useState, useTransition } from "react";
 import { Countries, FilteredCountries } from "@/interfaces/countries-interface";
-import Image from "next/image";
 
 export function CommentsForm(){
   const [searchCountry, setSearchCountry] = useState("")
@@ -29,15 +29,18 @@ export function CommentsForm(){
   // BUSCAR TODOS OS PAISES E SUAS BANDEIRAS
   async function getAllCountries() {
     // URL DA API QUE RETORNA PAISES E SUAS BANDEIRAS
-    const httpPath = 'https://restcountries.com/v3.1/all';
+
+    const httpPath = 'https://api.worldbank.org/v2/country?format=json&per_page=300';
 
     try {
       const response = (await axios.get(httpPath)).data
 
-      const filteredCountries = response.map((country: Countries)=>{
-        return {name: country.name.common, flag: country.flags.svg}
+      const filteredCountries = response[1].map((country: Countries)=>{
+        return {name: country.name, flag: country.iso2Code.toLowerCase()}
       })
+
       setAllCountries(filteredCountries)
+      
       
     } catch (error) {
       console.log(error)
@@ -63,6 +66,7 @@ export function CommentsForm(){
       setCountrySelected({image:image, country:child})
 
     setOpenSelectCountrySelect(false)
+
 
   }
 
@@ -210,12 +214,12 @@ export function CommentsForm(){
 
           <div className="selectContainer bg-dark-900 text-gray-600" ref={selectContainerRef}>
 
-            {countrySelected?.image 
+            {countrySelected?.country 
               ?(
-                <div className="flex items-center justify-start gap-2">
+                <div className="relative flex items-center justify-start gap-2">
 
                   <Image 
-                    src={`${countrySelected.image}`} 
+                    src={countrySelected.image}
                     alt={countrySelected.country} 
                     className="size-6" 
                     width={600} 
@@ -259,12 +263,14 @@ export function CommentsForm(){
                                   onClick={changeSelectedCountry}
                                   className="w-full h-14 px-4 rounded-lg flex items-center gap-2 hover:bg-blue-900/15 transition-all z-50"
                                 >
+                                
                                 <Image 
-                                  src={country.flag} 
-                                  alt={country.name} 
+                                  src={`https://flagcdn.com/w320/${country.flag}.png`}
+                                  alt={country.name}
                                   className="size-6" 
-                                  width={600} 
-                                  height={600}
+                                  width={100}
+                                  height={100}
+                                  unoptimized
                                 />
                                 <p>{country.name}</p>
                               </button> 

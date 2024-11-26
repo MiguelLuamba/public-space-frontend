@@ -1,6 +1,6 @@
 "use client"
 
-import { CSSProperties } from "react"
+import { CSSProperties, Suspense } from "react"
 
 interface MarsModelProps{
   styles: CSSProperties
@@ -13,13 +13,15 @@ export default function MarsModel({
   camera_controls
 }:MarsModelProps){
   return(
-    <model-viewer
-      id={id}
-      src="/models/mars.glb"
-      alt="Um modelo 3D"
-      auto-rotate
-      camera-controls={camera_controls}
-      style={styles} 
-    />
+    <Suspense fallback={<p>carregando...</p>}>
+      <model-viewer
+        id={id}
+        src="/models/mars.glb"
+        alt="Um modelo 3D"
+        auto-rotate
+        camera-controls={camera_controls}
+        style={styles} 
+      />
+    </Suspense>
   )
 }
